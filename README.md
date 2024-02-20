@@ -52,3 +52,28 @@ Steps:
 ### Setup Multi-clustered ELK on production environment:
 
 ![elk-setup-ha](https://github.com/aryaa192/elk-stack/assets/22274075/67f66dac-32de-4607-af10-c41decf77f1e)
+
+### setting-up elasticsearch cluster at on-premese data-center.
+#### System requirements:
+- 3 nodes for elasticsearch, 3 nodes for kibana, 1 node for Logstash, 1 node for kafka.
+- [64 GB RAM, data storage min 1tb, 8 cpu/vcpus] each for elasticsearch.
+
+> Step-1: download & install [elasticsearch](https://www.elastic.co/downloads/elasticsearch) (do it for all three nodes.)
+
+> Step-2: download & install logstash & kibana to respective nodes/server machine.
+
+> Step-3: configure elasticsearch cluster.
+
+#### elasticsearch confgiuration 
+- elasticsearch.yml for configuring Elasticsearch
+- jvm.options for configuring Elasticsearch JVM settings
+- log4j2.properties for configuring Elasticsearch logging
+#### certificates required for to establish secure connections between elasticsearch nodes and between elasticsearch and kibana.
+- SSL certificates (for elasticsearch nodes connections)
+- Http certificate (for elasticsearch and kibana connection)
+
+> step-1 go to one of elasticsearch server/node
+
+> step-2 go to /usr/share/elasticsearch/bin
+
+> generate ca command: ```./elasticsearch-certutil ca```
